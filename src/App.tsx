@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@mui/material';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Homepage } from './pages/homepage';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    document.title = "React Sandbox"
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box>
+      <Routes>
+        <Route path="/"><Homepage /></Route>
+        <Route path="/product"><Homepage /></Route>
+        <Route path="/pricing"><Homepage /></Route>
+        <Route path="/blog"><Homepage /></Route>
+        <Route path="/profile"><Homepage /></Route>
+        <Route path="/account"><Homepage /></Route>
+        <Route path="/dashboard"><Homepage /></Route>
+        <Route path="/logout"><Homepage /></Route>
+      </Routes>
+    </Box>
+  )
 }
 
 export default App;
