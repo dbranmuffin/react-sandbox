@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { globalStyles } from "../styles/global";
+import { globalStyles } from "../styles/global.styles";
 
 const styles = {
   header: {
