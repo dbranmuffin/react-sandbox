@@ -1,6 +1,7 @@
 type NavLink = {
     text: string,
-    link: string
+    path: string,
+    element: JSX.Element
 }
 
 export type { NavLink }

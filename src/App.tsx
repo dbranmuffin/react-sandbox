@@ -1,26 +1,42 @@
-import { Box } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Homepage } from './pages/homepage';
+import { Navbar } from './components/nav-bar';
+import { pages } from './data/global/pages';
+import { ACTION_ACTIVE, BACKGROUND, SUCCESS_DARK, SUCCESS_MAIN, TEXT } from './styles/colors';
 
 const App = () => {
+  const globalTheme = createTheme({
+    palette: {
+      background: {
+        paper: BACKGROUND,
+      },
+      text: {
+        primary: TEXT,
+      },
+      action: {
+        active: ACTION_ACTIVE,
+      },
+      success: {
+        main: SUCCESS_MAIN,
+        dark: SUCCESS_DARK,
+      }
+    }
+  });
+
   useEffect(() => {
     document.title = "React Sandbox"
   }, [])
 
   return (
-    <Box>
+    <ThemeProvider theme={globalTheme}>
+      <Navbar />
       <Routes>
-        <Route path="/"><Homepage /></Route>
-        <Route path="/product"><Homepage /></Route>
-        <Route path="/pricing"><Homepage /></Route>
-        <Route path="/blog"><Homepage /></Route>
-        <Route path="/profile"><Homepage /></Route>
-        <Route path="/account"><Homepage /></Route>
-        <Route path="/dashboard"><Homepage /></Route>
-        <Route path="/logout"><Homepage /></Route>
+        {pages.map(page => {
+          return <Route path={page.path} element={page.element} key={page.text} />
+        })}
       </Routes>
-    </Box>
+    </ThemeProvider>
   )
 }
 

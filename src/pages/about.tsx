@@ -9,14 +9,14 @@ const styles = {
   }
 }
 
-const Homepage = () => {
+const About = () => {
   return (
     <Grid sx={globalStyles.page}>
       <Typography style={styles.header}>
-        Home
+        About
       </Typography>
     </Grid>
   );
 }
 
-export { Homepage };
+export { About };
