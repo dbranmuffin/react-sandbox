@@ -10,7 +10,8 @@ export const colors = {
     },
     background: {
         page: '#1E4D7B',
-        nav: '#00CC99'
+        header: '#00CC99',
+        footer: '#777'
     },
-    text: '#CCCCCC'
+    text: '#CCC'
 }

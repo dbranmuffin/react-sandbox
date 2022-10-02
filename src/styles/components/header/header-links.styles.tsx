@@ -1,6 +1,6 @@
 import { colors } from "../../colors.styles";
 
-export const pageLinksStyles = {
+export const headerLinksStyles = {
     link: {
         padding: '10px',
         fontWeight: 'bold',
@@ -9,5 +9,8 @@ export const pageLinksStyles = {
         "&:hover": {
             color: colors.secondary
         },
+    },
+    wrapper: {
+        paddingRight: '2rem'
     }
 };

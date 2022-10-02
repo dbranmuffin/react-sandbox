@@ -1,8 +1,14 @@
 export const pageSectionStyle = {
+    headerWrapper: {
+        width: '100%',
+        justifyContent: 'center',
+        paddingBottom: '10px',
+        display: 'flex',
+    },
     header: {
         fontWeight: 'bold',
         align: 'center',
-        justify: 'center'
+        justifyContent: 'center'
     },
     bodyWrapper: {
         width: '80%',

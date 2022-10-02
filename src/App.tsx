@@ -1,23 +1,31 @@
-import { ThemeProvider } from '@mui/material';
+import { Grid, ThemeProvider } from '@mui/material';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/footer/footer';
 import { Header } from './components/header/header';
-import { pages } from './data/global/pages';
-import { globalTheme, SITE_TITLE } from './styles/global.styles';
+import { allPageInfo, SITE_TITLE } from './data/global/pages.data';
+import { globalTheme, globalStyles, useScrollbarStyles } from './styles/global.styles';
 
 const App = () => {
+  useScrollbarStyles();
+  
   useEffect(() => {
     document.title = SITE_TITLE;
-  }, [])
+  }, []);
 
   return (
     <ThemeProvider theme={globalTheme}>
-      <Header />
-      <Routes>
-        {pages.map(page => {
-          return <Route path={page.path} element={page.element} key={page.text} />
-        })}
-      </Routes>
+      <Grid sx={globalStyles.page}>
+        <Header />
+        <Routes>
+          {allPageInfo.map(pageInfo => {
+            return <Route path={pageInfo.page.path}
+              element={pageInfo.page.element}
+              key={pageInfo.page.text} />
+          })}
+        </Routes>
+        <Footer />
+      </Grid>
     </ThemeProvider>
   )
 }

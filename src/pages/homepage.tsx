@@ -1,5 +1,4 @@
 import { Grid, Typography } from "@mui/material";
-import { globalStyles } from "../styles/global.styles";
 
 const styles = {
   header: {
@@ -11,7 +10,7 @@ const styles = {
 
 const Homepage = () => {
   return (
-    <Grid sx={globalStyles.page}>
+    <Grid>
       <Typography style={styles.header}>
         Home
       </Typography>

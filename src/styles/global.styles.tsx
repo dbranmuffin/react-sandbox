@@ -1,16 +1,19 @@
 import { createTheme } from "@mui/material";
+import { createUseStyles } from "react-jss";
 import { colors } from "./colors.styles";
 
-export const globalStyles = {
+const globalStyles = {
     page: {
-        paddingTop: '4rem',
+        paddingTop: '5rem',
+        paddingBottom: '8rem',
         width: '100%',
-        height: '100vh',
+        minHeight: '100vh',
+        maxHeight:'100%',
         background: colors.background.page
     }
 }
 
-export const globalTheme = createTheme({
+const globalTheme = createTheme({
     palette: {
         background: {
             paper: colors.background.page,
@@ -28,4 +31,21 @@ export const globalTheme = createTheme({
     }
 });
 
-export const SITE_TITLE = 'React Sandbox';
+const useScrollbarStyles = createUseStyles({
+    '@global': {
+        '*::-webkit-scrollbar': {
+            width: '10px'
+        },
+        '*::-webkit-scrollbar-track': {
+            background: '#bbb' 
+        },
+        '*::-webkit-scrollbar-thumb': {
+            background: '#888' 
+        },
+        '*::-webkit-scrollbar-thumb:hover': {
+            background: '#555' 
+        }
+    }
+  });
+
+export { globalStyles, globalTheme, useScrollbarStyles };

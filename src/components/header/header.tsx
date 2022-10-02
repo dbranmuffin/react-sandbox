@@ -1,8 +1,7 @@
-import { AppBar, Toolbar, CssBaseline } from "@mui/material";
+import { AppBar, Toolbar, CssBaseline, Box } from "@mui/material";
 import { headerStyles } from "../../styles/components/header/header.styles";
-import { Avatar } from "./avatar";
 import { HomeButton } from "./home-button";
-import { PageLinks } from "./page-links";
+import { HeaderLinks } from "./header-links";
 
 const Header = () => {
     return (
@@ -10,8 +9,8 @@ const Header = () => {
             <CssBaseline />
             <Toolbar sx={headerStyles.toolBar}>
                 <HomeButton />
-                <PageLinks />
-                <Avatar />
+                <HeaderLinks />
+                <Box />
             </Toolbar>
         </AppBar >
     );
