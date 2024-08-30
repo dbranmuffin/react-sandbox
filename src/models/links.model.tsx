@@ -9,7 +9,7 @@ interface PageLink extends CustomLink {
 
 interface SectionLink extends CustomLink {};
 
-interface ExternalLink extends CustomLink {};
+interface ExternalLink extends CustomLink {}
 
 type FooterColumnLink = {
     title: string,
